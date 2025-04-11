@@ -23,7 +23,7 @@ namespace Comercio_02
         public string Telefone { get; set; }
         public string Email { get; set; }
         public DateTime dataCadCli {  get; set; }
-
+        //Teste
         //CRUD CADCLI
         public void InserirCadcli()
         {
