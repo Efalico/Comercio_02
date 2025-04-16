@@ -17,6 +17,8 @@ namespace Comercio_02
             InitializeComponent();
         }
 
+
+        //teste de programa
       
     }
 }

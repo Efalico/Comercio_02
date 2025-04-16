@@ -61,7 +61,6 @@
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.btnIdprod = new System.Windows.Forms.Button();
             this.lblNomeprod = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -366,21 +365,11 @@
             this.lblNomeprod.TabIndex = 34;
             this.lblNomeprod.Text = "Nome Produto";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(350, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "..";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 584);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblNomeprod);
             this.Controls.Add(this.btnIdprod);
             this.Controls.Add(this.lblNomeCliente);
@@ -458,6 +447,5 @@
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Button btnIdprod;
         private System.Windows.Forms.Label lblNomeprod;
-        private System.Windows.Forms.Button button1;
     }
 }
