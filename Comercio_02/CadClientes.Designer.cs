@@ -39,7 +39,7 @@
             this.lblTelefoneCliente = new System.Windows.Forms.Label();
             this.lblSobrenomeCliente = new System.Windows.Forms.Label();
             this.lblNomeCliente = new System.Windows.Forms.Label();
-            this.txtCadCliente = new System.Windows.Forms.Label();
+            this.lblid = new System.Windows.Forms.Label();
             this.dgCadClientes = new System.Windows.Forms.DataGridView();
             this.txtPesquisaCadCli = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -148,15 +148,15 @@
             this.lblNomeCliente.TabIndex = 11;
             this.lblNomeCliente.Text = "Cliente";
             // 
-            // txtCadCliente
+            // lblid
             // 
-            this.txtCadCliente.AutoSize = true;
-            this.txtCadCliente.Location = new System.Drawing.Point(12, 8);
-            this.txtCadCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtCadCliente.Name = "txtCadCliente";
-            this.txtCadCliente.Size = new System.Drawing.Size(18, 13);
-            this.txtCadCliente.TabIndex = 12;
-            this.txtCadCliente.Text = "ID";
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(12, 8);
+            this.lblid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(18, 13);
+            this.lblid.TabIndex = 12;
+            this.lblid.Text = "ID";
             // 
             // dgCadClientes
             // 
@@ -165,6 +165,7 @@
             this.dgCadClientes.Name = "dgCadClientes";
             this.dgCadClientes.Size = new System.Drawing.Size(296, 150);
             this.dgCadClientes.TabIndex = 19;
+            this.dgCadClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadClientes_CellContentClick);
             // 
             // txtPesquisaCadCli
             // 
@@ -239,9 +240,10 @@
             this.Controls.Add(this.lblTelefoneCliente);
             this.Controls.Add(this.lblSobrenomeCliente);
             this.Controls.Add(this.lblNomeCliente);
-            this.Controls.Add(this.txtCadCliente);
+            this.Controls.Add(this.lblid);
             this.Name = "CadClientes";
             this.Text = "CadClientes";
+            this.Load += new System.EventHandler(this.CadClientes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -261,7 +263,7 @@
         private System.Windows.Forms.Label lblTelefoneCliente;
         private System.Windows.Forms.Label lblSobrenomeCliente;
         private System.Windows.Forms.Label lblNomeCliente;
-        private System.Windows.Forms.Label txtCadCliente;
+        private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.DataGridView dgCadClientes;
         private System.Windows.Forms.TextBox txtPesquisaCadCli;
         private System.Windows.Forms.Button btnLimpar;

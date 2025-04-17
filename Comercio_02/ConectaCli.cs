@@ -11,7 +11,8 @@ namespace Comercio_02
 {
     internal class ConectaCli
     {
-        string conexao = "Data Source = JUN0675612W11-1\\BDSENAC; Initial Catalog = BDTI46; User ID = senaclivre; Password=senaclivre";
+        string conexao = "Data Source = JUN0675612W11-1\\BDSENAC; Initial Catalog = BDComercioTI46; User ID = senaclivre; Password=senaclivre";
+        
 
         public SqlConnection con = null;
         SqlDataAdapter da = null;
@@ -74,7 +75,7 @@ namespace Comercio_02
             sql = "DELETE FROM CadClientes WHERE id=@id";
             con.Open();
             cmd = new SqlCommand (sql, con);
-            cmd.Parameters.AddWithValue("@idcliente", id);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery ();
             MessageBox.Show("Registro Excluído!");
             con.Close();

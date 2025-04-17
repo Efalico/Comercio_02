@@ -71,7 +71,7 @@
       <DependentUpon>Comercio.cs</DependentUpon>
     </Compile>
     <Compile Include="ConectaVendaMestre.cs" />
-    <Compile Include="ConectaEstoque.cs" />
+    <Compile Include="ConectaProduto.cs" />
     <Compile Include="ConectaCli.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -27,11 +27,12 @@ namespace Comercio_02
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            comcli.Cliente = txtCadCliente.Text;
+            comcli.Cliente = txtcliente.Text;
             comcli.Sobrenome = txtsobrenome.Text;
             comcli.Telefone = txttelefone.Text;
             comcli.Email = txtemail.Text;
-            comcli.dataCadCli = Convert.ToDateTime(txtCadCliente.Text);
+            comcli.dataCadCli = Convert.ToDateTime(txtdata.Text);
+
 
             comcli.InserirCadcli();
             limpadados();
@@ -91,6 +92,22 @@ namespace Comercio_02
             txtemail.Clear();
             txtdata.Clear();
          
+        }
+
+        private void dgCadClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtidcliente.Text = dgCadClientes.CurrentRow.Cells[0].Value.ToString();
+            txtcliente.Text = dgCadClientes.CurrentRow.Cells[1].Value.ToString();
+            txtsobrenome.Text = dgCadClientes.CurrentRow.Cells[2].Value.ToString();
+            txttelefone.Text = dgCadClientes.CurrentRow.Cells[3].Value.ToString();
+            txtemail.Text = dgCadClientes.CurrentRow.Cells[4].Value.ToString();
+            txtdata.Text = dgCadClientes.CurrentRow.Cells[5].Value.ToString();
+
+        }
+
+        private void CadClientes_Load_1(object sender, EventArgs e)
+        {
+            atualizaGrid();
         }
     }
 }

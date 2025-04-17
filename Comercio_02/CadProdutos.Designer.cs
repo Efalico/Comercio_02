@@ -38,7 +38,7 @@
             this.txtmodelo = new System.Windows.Forms.TextBox();
             this.txtmarca = new System.Windows.Forms.TextBox();
             this.txtProduto = new System.Windows.Forms.TextBox();
-            this.txtidCadproduto = new System.Windows.Forms.TextBox();
+            this.txtidproduto = new System.Windows.Forms.TextBox();
             this.lblData = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             // 
             this.btnLimpar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnLimpar.Location = new System.Drawing.Point(235, 352);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(56, 19);
             this.btnLimpar.TabIndex = 52;
@@ -77,7 +77,7 @@
             // 
             this.btnExcluir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnExcluir.Location = new System.Drawing.Point(165, 352);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(56, 19);
             this.btnExcluir.TabIndex = 51;
@@ -88,7 +88,7 @@
             // 
             this.btnAlterar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAlterar.Location = new System.Drawing.Point(90, 352);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(56, 19);
             this.btnAlterar.TabIndex = 50;
@@ -99,17 +99,18 @@
             // 
             this.btnInserir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnInserir.Location = new System.Drawing.Point(20, 352);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(56, 19);
             this.btnInserir.TabIndex = 49;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // txtdatacadproduto
             // 
             this.txtdatacadproduto.Location = new System.Drawing.Point(63, 106);
-            this.txtdatacadproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdatacadproduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtdatacadproduto.Mask = "00/00/0000";
             this.txtdatacadproduto.Name = "txtdatacadproduto";
             this.txtdatacadproduto.Size = new System.Drawing.Size(97, 20);
@@ -119,7 +120,7 @@
             // txtmodelo
             // 
             this.txtmodelo.Location = new System.Drawing.Point(63, 79);
-            this.txtmodelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmodelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtmodelo.Name = "txtmodelo";
             this.txtmodelo.Size = new System.Drawing.Size(242, 20);
             this.txtmodelo.TabIndex = 47;
@@ -127,7 +128,7 @@
             // txtmarca
             // 
             this.txtmarca.Location = new System.Drawing.Point(63, 56);
-            this.txtmarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtmarca.Name = "txtmarca";
             this.txtmarca.Size = new System.Drawing.Size(242, 20);
             this.txtmarca.TabIndex = 46;
@@ -135,18 +136,18 @@
             // txtProduto
             // 
             this.txtProduto.Location = new System.Drawing.Point(63, 33);
-            this.txtProduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.Size = new System.Drawing.Size(242, 20);
             this.txtProduto.TabIndex = 45;
             // 
-            // txtidCadproduto
+            // txtidproduto
             // 
-            this.txtidCadproduto.Location = new System.Drawing.Point(63, 11);
-            this.txtidCadproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtidCadproduto.Name = "txtidCadproduto";
-            this.txtidCadproduto.Size = new System.Drawing.Size(76, 20);
-            this.txtidCadproduto.TabIndex = 44;
+            this.txtidproduto.Location = new System.Drawing.Point(63, 11);
+            this.txtidproduto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtidproduto.Name = "txtidproduto";
+            this.txtidproduto.Size = new System.Drawing.Size(76, 20);
+            this.txtidproduto.TabIndex = 44;
             // 
             // lblData
             // 
@@ -216,7 +217,7 @@
             this.Controls.Add(this.txtmodelo);
             this.Controls.Add(this.txtmarca);
             this.Controls.Add(this.txtProduto);
-            this.Controls.Add(this.txtidCadproduto);
+            this.Controls.Add(this.txtidproduto);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblModelo);
             this.Controls.Add(this.lblMarca);
@@ -243,7 +244,7 @@
         private System.Windows.Forms.TextBox txtmodelo;
         private System.Windows.Forms.TextBox txtmarca;
         private System.Windows.Forms.TextBox txtProduto;
-        private System.Windows.Forms.TextBox txtidCadproduto;
+        private System.Windows.Forms.TextBox txtidproduto;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.Label lblMarca;

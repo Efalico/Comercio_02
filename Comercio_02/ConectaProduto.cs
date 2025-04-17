@@ -9,72 +9,70 @@ using System.Windows.Forms;
 
 namespace Comercio_02
 {
-    internal class ConectaEstoque
+ 
+    internal class ConectaProduto
     {
-        string conexao = "Data Source = JUN0675611W11-1\\BDSENAC; Initial Catalog = BDTI46; User ID = senaclivre; Password=senaclivre";
+        string conexao = "Data Source = JUN0675611W11-1\\BDSENAC; Initial Catalog = BDComercioTI46; User ID = senaclivre; Password=senaclivre";
 
         public SqlConnection con = null;
         SqlDataAdapter da = null;
 
         //Replica tabelas
         public int id { get; set; }
-        public string Cliente { get; set; }
-        public string Sobrenome { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
-        public DateTime dataCadCli {  get; set; }
+        public string NomeProd { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public DateTime DataProduto {  get; set; }
 
-        //CRUD CADCLI
-        public void InserirCadcli()
+        //CRUD CADPRO
+        public void InserirCadpro()
         {
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conexao);
-            sql = "INSERT INTO CadClientes (Cliente, Sobrenome, Telefone, Email, dataCadCli) VALUES (@Cliente, @Sobrenome, @Telefone, @Email, @dataCadCli)";
+            sql = "INSERT INTO CadProdutos (NomeProd, Marca, Modelo, DataProduto) VALUES (@NomeProd, @Marca, @Modelo, @DataProduro)";
 
             con.Open();
             cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@Cliente", Cliente);
-            cmd.Parameters.AddWithValue("@Sobrenome", Sobrenome);
-            cmd.Parameters.AddWithValue("@Telefone", Telefone);
-            cmd.Parameters.AddWithValue("@Email", Email);
-            cmd.Parameters.AddWithValue("@dataCadCli", dataCadCli);
+            cmd.Parameters.AddWithValue("@NomeProd", NomeProd);
+            cmd.Parameters.AddWithValue("@Marca", Marca);
+            cmd.Parameters.AddWithValue("@Modelo", Modelo);
+            cmd.Parameters.AddWithValue("@DataProduto", DataProduto);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Registro adicionado!");
             con.Close();
         }
 
-        public void AlterarCadcli()
+        public void AlterarCadprod()
         {
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conexao);
-            sql = "update CadClientes set Cliente = @Cliente, Sobrenome = @Sobrenome, Telefone = @Telefone, Email = @Email, dataCadCli = @dataCadCli WHERE id = @id";
+            sql = "update CadProdutos set Produto = @NomeProd, Marca = @Marca, Modelo = @Modelo, DataProduto = @DataProduto WHERE id = @id";
 
             con.Open();
             cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@Cliente", Cliente);
-            cmd.Parameters.AddWithValue("@Sobrenome", Sobrenome);
-            cmd.Parameters.AddWithValue("@Telefone", Telefone);
-            cmd.Parameters.AddWithValue("@Email", Email);
-            cmd.Parameters.AddWithValue("@dataCadCli", dataCadCli);
+            cmd.Parameters.AddWithValue("@NomeProd", NomeProd);
+            cmd.Parameters.AddWithValue("@Marca",Marca );
+            cmd.Parameters.AddWithValue("@Modelo", Modelo);
+            cmd.Parameters.AddWithValue("@DataProduto",DataProduto );
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Registro alterado!");
             con.Close();
         }
 
-        public void ExcluirCadcli()
+        public void ExcluirCadpro()
         {
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conexao);
-            sql = "DELETE FROM CadClientes WHERE id=@id";
+            sql = "DELETE FROM CadProdutos WHERE id=@id";
             con.Open();
             cmd = new SqlCommand (sql, con);
-            cmd.Parameters.AddWithValue("@idcliente", id);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery ();
             MessageBox.Show("Registro Excluído!");
             con.Close();
@@ -83,7 +81,7 @@ namespace Comercio_02
         public DataTable AtualizaGride(DataTable x)
         {
             string strSql;
-            strSql = "SELECT * FROM CadClientes";
+            strSql = "SELECT * FROM CadProdutos";
 
             con = new SqlConnection(conexao);
             SqlDataAdapter da = new SqlDataAdapter (strSql, con);
@@ -98,7 +96,7 @@ namespace Comercio_02
         public DataTable PesquisaNome(DataTable x, string txtPes)
         {
             string strSql;
-            strSql = "SELECT * FROM CadClientes WHERE cliente LIKE '%"+txtPes+"%'";
+            strSql = "SELECT * FROM CadProdutos WHERE NomeProd LIKE '%"+txtPes+"%'";
             con = new SqlConnection (conexao);
             da = new SqlDataAdapter (strSql, con);
             DataTable dt = new DataTable();
