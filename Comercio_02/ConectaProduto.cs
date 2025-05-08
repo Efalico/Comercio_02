@@ -12,17 +12,18 @@ namespace Comercio_02
  
     internal class ConectaProduto
     {
-        string conexao = "Data Source = JUN0675611W11-1\\BDSENAC; Initial Catalog = BDComercioTI46; User ID = senaclivre; Password=senaclivre";
+        string conexao = "Data Source = JUN0675612W11-1\\BDSENAC; Initial Catalog = BDComercioTI46; User ID = senaclivre; Password=senaclivre";
 
         public SqlConnection con = null;
         SqlDataAdapter da = null;
 
         //Replica tabelas
-        public int id { get; set; }
+        public int id{ get; set; }
         public string NomeProd { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public DateTime DataProduto {  get; set; }
+        public decimal valorUnitario {  get; set; }    
 
         //CRUD CADPRO
         public void InserirCadpro()
@@ -30,7 +31,7 @@ namespace Comercio_02
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conexao);
-            sql = "INSERT INTO CadProdutos (NomeProd, Marca, Modelo, DataProduto) VALUES (@NomeProd, @Marca, @Modelo, @DataProduro)";
+            sql = "INSERT INTO CadProdutos (NomeProd, Marca, Modelo, DataProduto,ValorUnitario) VALUES (@NomeProd, @Marca, @Modelo, @DataProduto,@ValorUnitario)";
 
             con.Open();
             cmd = new SqlCommand(sql, con);
@@ -38,6 +39,7 @@ namespace Comercio_02
             cmd.Parameters.AddWithValue("@Marca", Marca);
             cmd.Parameters.AddWithValue("@Modelo", Modelo);
             cmd.Parameters.AddWithValue("@DataProduto", DataProduto);
+            cmd.Parameters.AddWithValue("@valorUnitario", valorUnitario);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Registro adicionado!");
@@ -49,7 +51,8 @@ namespace Comercio_02
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conexao);
-            sql = "update CadProdutos set Produto = @NomeProd, Marca = @Marca, Modelo = @Modelo, DataProduto = @DataProduto WHERE id = @id";
+            sql = "update cadprodutos set nomeprod = @nomeprod, " +
+                "marca=@marca, modelo=@modelo, dataproduto=@dataProduto, valorUnitario=@valorUnitario where idprod = @idprod";
 
             con.Open();
             cmd = new SqlCommand(sql, con);
@@ -58,6 +61,7 @@ namespace Comercio_02
             cmd.Parameters.AddWithValue("@Marca",Marca );
             cmd.Parameters.AddWithValue("@Modelo", Modelo);
             cmd.Parameters.AddWithValue("@DataProduto",DataProduto );
+            cmd.Parameters.AddWithValue("@valorUnitario", valorUnitario);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Registro alterado!");
@@ -69,7 +73,7 @@ namespace Comercio_02
             string sql;
             SqlCommand cmd;
             con = new SqlConnection(conexao);
-            sql = "DELETE FROM CadProdutos WHERE id=@id";
+            sql = "DELETE FROM CadProdutos WHERE IDProd=@id";
             con.Open();
             cmd = new SqlCommand (sql, con);
             cmd.Parameters.AddWithValue("@id", id);

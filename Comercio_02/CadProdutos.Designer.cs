@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtPesquisaCadCli = new System.Windows.Forms.TextBox();
-            this.dgCadClientes = new System.Windows.Forms.DataGridView();
+            this.dgCadprodutos = new System.Windows.Forms.DataGridView();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -44,7 +44,9 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblProduto = new System.Windows.Forms.Label();
             this.lblidprod = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).BeginInit();
+            this.lblValorUni = new System.Windows.Forms.Label();
+            this.txtValorUni = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCadprodutos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPesquisaCadCli
@@ -54,13 +56,14 @@
             this.txtPesquisaCadCli.Size = new System.Drawing.Size(296, 20);
             this.txtPesquisaCadCli.TabIndex = 38;
             // 
-            // dgCadClientes
+            // dgCadprodutos
             // 
-            this.dgCadClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCadClientes.Location = new System.Drawing.Point(9, 187);
-            this.dgCadClientes.Name = "dgCadClientes";
-            this.dgCadClientes.Size = new System.Drawing.Size(296, 150);
-            this.dgCadClientes.TabIndex = 37;
+            this.dgCadprodutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCadprodutos.Location = new System.Drawing.Point(9, 187);
+            this.dgCadprodutos.Name = "dgCadprodutos";
+            this.dgCadprodutos.Size = new System.Drawing.Size(296, 150);
+            this.dgCadprodutos.TabIndex = 37;
+            this.dgCadprodutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadprodutos_CellContentClick);
             // 
             // btnLimpar
             // 
@@ -72,6 +75,7 @@
             this.btnLimpar.TabIndex = 52;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnExcluir
             // 
@@ -83,6 +87,7 @@
             this.btnExcluir.TabIndex = 51;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -94,6 +99,7 @@
             this.btnAlterar.TabIndex = 50;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -109,7 +115,7 @@
             // 
             // txtdatacadproduto
             // 
-            this.txtdatacadproduto.Location = new System.Drawing.Point(63, 106);
+            this.txtdatacadproduto.Location = new System.Drawing.Point(63, 103);
             this.txtdatacadproduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtdatacadproduto.Mask = "00/00/0000";
             this.txtdatacadproduto.Name = "txtdatacadproduto";
@@ -204,11 +210,32 @@
             this.lblidprod.TabIndex = 43;
             this.lblidprod.Text = "ID";
             // 
+            // lblValorUni
+            // 
+            this.lblValorUni.AutoSize = true;
+            this.lblValorUni.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblValorUni.Location = new System.Drawing.Point(8, 133);
+            this.lblValorUni.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblValorUni.Name = "lblValorUni";
+            this.lblValorUni.Size = new System.Drawing.Size(70, 13);
+            this.lblValorUni.TabIndex = 53;
+            this.lblValorUni.Text = "Valor Unitario";
+            // 
+            // txtValorUni
+            // 
+            this.txtValorUni.Location = new System.Drawing.Point(82, 126);
+            this.txtValorUni.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValorUni.Name = "txtValorUni";
+            this.txtValorUni.Size = new System.Drawing.Size(78, 20);
+            this.txtValorUni.TabIndex = 54;
+            // 
             // CadProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 379);
+            this.Controls.Add(this.txtValorUni);
+            this.Controls.Add(this.lblValorUni);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -224,10 +251,10 @@
             this.Controls.Add(this.lblProduto);
             this.Controls.Add(this.lblidprod);
             this.Controls.Add(this.txtPesquisaCadCli);
-            this.Controls.Add(this.dgCadClientes);
+            this.Controls.Add(this.dgCadprodutos);
             this.Name = "CadProdutos";
             this.Text = "CadProdutos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgCadClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCadprodutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +262,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtPesquisaCadCli;
-        private System.Windows.Forms.DataGridView dgCadClientes;
+        private System.Windows.Forms.DataGridView dgCadprodutos;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
@@ -250,5 +277,7 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblProduto;
         private System.Windows.Forms.Label lblidprod;
+        private System.Windows.Forms.Label lblValorUni;
+        private System.Windows.Forms.TextBox txtValorUni;
     }
 }
