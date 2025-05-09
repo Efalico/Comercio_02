@@ -70,6 +70,7 @@
     <Compile Include="Comercio.Designer.cs">
       <DependentUpon>Comercio.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConectaEstoque.cs" />
     <Compile Include="ConectaVendaMestre.cs" />
     <Compile Include="ConectaProduto.cs" />
     <Compile Include="ConectaCli.cs" />

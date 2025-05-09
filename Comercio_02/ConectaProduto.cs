@@ -56,7 +56,7 @@ namespace Comercio_02
 
             con.Open();
             cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@idprod", id);
             cmd.Parameters.AddWithValue("@NomeProd", NomeProd);
             cmd.Parameters.AddWithValue("@Marca",Marca );
             cmd.Parameters.AddWithValue("@Modelo", Modelo);

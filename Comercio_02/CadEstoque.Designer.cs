@@ -199,6 +199,7 @@
             this.dgCadEstoque.Name = "dgCadEstoque";
             this.dgCadEstoque.Size = new System.Drawing.Size(341, 150);
             this.dgCadEstoque.TabIndex = 21;
+            this.dgCadEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCadEstoque_CellContentClick);
             // 
             // CadEstoque
             // 

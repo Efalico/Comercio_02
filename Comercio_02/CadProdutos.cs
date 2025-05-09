@@ -93,7 +93,7 @@ namespace Comercio_02
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            compro.id = int.Parse(txtidproduto.Text);
+            compro.id= int.Parse(txtidproduto.Text);
             compro.NomeProd = txtProduto.Text;
             compro.Marca = txtmarca.Text;
             compro.Modelo = txtmodelo.Text;
