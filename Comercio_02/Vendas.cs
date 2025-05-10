@@ -28,7 +28,7 @@ namespace Comercio_02
 
 
         ConectaVendaMestre MestreVendas = new ConectaVendaMestre();
-        //ConectaItensVendas itensVendas = new ConectaItensVendas();
+        ConectaItensVendas itensVendas = new ConectaItensVendas();
 
 
         //MestreVendas
@@ -46,8 +46,25 @@ namespace Comercio_02
 
         }
 
-  
-        
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            itensVendas.id_ItensVendas = int.Parse(txtIdprod.Text);
 
+            // Buscar o idMestreVendas gerado
+            int idMestreVendas =
+            itensVendas.id_MestreVendas = itensVendas.PegaUltimoIdMestreVendas();
+
+            itensVendas.idprod = int.Parse(txtIdprod.Text);
+            itensVendas.Quantidade = int.Parse(txtQuantidade.Text);
+            itensVendas.PrecoUnit = decimal.Parse(txtPrecoUnitario.Text);
+            itensVendas.Desconto = decimal.Parse(txtDesconto.Text);
+            itensVendas.ValorTotalSemDesconto = decimal.Parse(txtTotalsemdesconto.Text);
+            itensVendas.ValortotalComDesconto = decimal.Parse(txttotalcomdesconto.Text);
+
+
+            itensVendas.ItensVenda();
+
+            dgVendas.DataSource = itensVendas.AtualizaGride(dt, idMestreVendas);
+        }
     }
 }

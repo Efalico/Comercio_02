@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vendas));
             this.lblVendas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,8 +62,10 @@
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.btnIdprod = new System.Windows.Forms.Button();
             this.lblNomeprod = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblVendas
@@ -369,11 +372,23 @@
             this.lblNomeprod.TabIndex = 34;
             this.lblNomeprod.Text = "Nome Produto";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(856, 207);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(86, 61);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 35;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 584);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblNomeprod);
             this.Controls.Add(this.btnIdprod);
             this.Controls.Add(this.lblNomeCliente);
@@ -411,6 +426,7 @@
             this.Text = "Vendas";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +467,6 @@
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Button btnIdprod;
         private System.Windows.Forms.Label lblNomeprod;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

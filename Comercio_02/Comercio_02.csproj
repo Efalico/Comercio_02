@@ -74,6 +74,7 @@
     <Compile Include="ConectaVendaMestre.cs" />
     <Compile Include="ConectaProduto.cs" />
     <Compile Include="ConectaCli.cs" />
+    <Compile Include="ConectaItensVendas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vendas.cs">
